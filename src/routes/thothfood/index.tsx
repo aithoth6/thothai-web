@@ -233,6 +233,13 @@ function Home() {
                 </div>
               </WhatsAppLink>
             ))}
+            <div className="flex flex-shrink-0 items-center gap-3 rounded-2xl border border-dashed border-border bg-card/50 px-5 py-3.5">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-secondary text-xl">🍽️</div>
+              <div className="text-left">
+                <p className="text-sm font-semibold text-foreground/50">More restaurants</p>
+                <p className="text-xs text-foreground/35">Coming soon to Accra</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

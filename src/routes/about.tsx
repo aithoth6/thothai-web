@@ -171,11 +171,14 @@ function About() {
               We're not actively hiring right now, but we're always happy to hear from people who want to build this with us.
             </p>
             <a
-              href={`mailto:${CONTACT_EMAIL}?subject=Careers at Thoth Technologies`}
+              href={`mailto:${CONTACT_EMAIL}?subject=Careers%20at%20Thoth%20Technologies&body=Hi%20Thoth%20team%2C%0A%0AI%27d%20love%20to%20join%20you.%20Here%27s%20a%20bit%20about%20me%3A%0A%0ARole%20I%27m%20interested%20in%3A%20%0ALinkedIn%20%2F%20Portfolio%3A%20%0A%0AI%27ve%20attached%20my%20CV.%0A%0AThanks%2C`}
               className="mt-6 inline-flex h-11 items-center gap-2 rounded-full border border-border px-5 text-sm font-semibold hover:bg-muted"
             >
               <Mail className="h-4 w-4" /> Send us your CV
             </a>
+            <p className="mt-2 text-xs text-foreground/45">
+              or email directly: <span className="font-medium select-all">{CONTACT_EMAIL}</span>
+            </p>
           </div>
         </div>
       </section>

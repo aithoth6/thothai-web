@@ -1,10 +1,20 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Instagram, Twitter, Facebook, Sparkles } from "lucide-react";
+import { Instagram, Twitter, Facebook, Sparkles, Copy, Check } from "lucide-react";
 import { SIGNUP_URL, LOGIN_URL, CONTACT_EMAIL, SOCIAL_URLS } from "@/lib/site";
 import { trackStartFree } from "@/lib/pixel";
 import { ThothAILogo } from "@/components/site/ThothAILogo";
 
 export function Footer() {
+  const [copied, setCopied] = useState(false);
+
+  function copyEmail() {
+    navigator.clipboard.writeText(CONTACT_EMAIL).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
   return (
     <footer className="bg-dark text-dark-foreground">
       <div className="container-page py-16">
@@ -76,7 +86,14 @@ export function Footer() {
                 </a>
               ))}
             </div>
-            <p className="mt-6 text-xs text-white/40">{CONTACT_EMAIL}</p>
+            <button
+              onClick={copyEmail}
+              className="mt-6 flex items-center gap-1.5 text-xs text-white/40 transition-colors hover:text-white/70"
+              title="Copy email address"
+            >
+              {copied ? <Check className="h-3 w-3 text-primary" /> : <Copy className="h-3 w-3" />}
+              {copied ? "Copied!" : CONTACT_EMAIL}
+            </button>
           </div>
         </div>
 

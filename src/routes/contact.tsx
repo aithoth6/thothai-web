@@ -99,7 +99,7 @@ function Contact() {
                       <p className="mt-0.5 text-xs text-foreground/60">Sign up free and be live instantly — no call needed.</p>
                     </div>
                     <a
-                      href={SIGNUP_URL}
+                      href={`${SIGNUP_URL}?plan=FREE`}
                       className="inline-flex h-9 flex-shrink-0 items-center gap-1.5 rounded-full bg-primary px-4 text-xs font-semibold text-primary-foreground"
                     >
                       Start free <ArrowRight className="h-3 w-3" />

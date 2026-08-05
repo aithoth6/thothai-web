@@ -179,7 +179,7 @@ function Privacy() {
               To exercise any of these rights, contact us at{" "}
               <a href={`mailto:${CONTACT_EMAIL}`} className="text-primary hover:underline">
                 {CONTACT_EMAIL}
-              </a>. We will respond within 21 days.
+              </a>. We will respond within 7 days.
             </p>
           </Section>
 

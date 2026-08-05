@@ -67,7 +67,7 @@ function ThothShop() {
             >
               Join the waitlist <ArrowRight className="h-4 w-4" />
             </Link>
-            <p className="text-sm text-white/40">Mention ThothShop in your message and we'll reach out first.</p>
+            <p className="text-sm text-white/40">Drop us a message — we'll reach out before public launch.</p>
           </motion.div>
         </div>
       </section>

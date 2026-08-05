@@ -195,12 +195,13 @@ function Home() {
               >
                 <MessageCircle className="h-4 w-4" /> Contact us
               </Link>
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
+              <Link
+                to="/contact"
+                search={{ role: undefined }}
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 px-6 font-semibold text-white/80 hover:bg-white/5"
               >
                 <Mail className="h-4 w-4" /> {CONTACT_EMAIL}
-              </a>
+              </Link>
             </div>
             <div className="mt-8 flex items-center justify-center gap-2 text-sm text-white/40">
               <MapPin className="h-3.5 w-3.5" /> Accra, Ghana
@@ -219,7 +220,7 @@ function Home() {
             <p className="mt-1 opacity-80">Thoth is live now. Free to start.</p>
           </div>
           <a
-            href={SIGNUP_URL}
+            href={`${SIGNUP_URL}?plan=FREE`}
             className="inline-flex h-12 items-center gap-2 rounded-full bg-dark px-7 font-semibold text-dark-foreground hover:bg-dark-card"
           >
             Start free <ArrowRight className="h-4 w-4" />
