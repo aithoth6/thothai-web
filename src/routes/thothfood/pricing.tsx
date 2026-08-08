@@ -133,7 +133,7 @@ function Pricing() {
           <div className="grid gap-6 sm:grid-cols-2 md:items-start lg:grid-cols-3">
 
             {/* Free card */}
-            <div className="flex flex-col overflow-hidden rounded-3xl border border-border bg-background shadow-sm">
+            <div className="flex flex-col rounded-3xl border border-border bg-background shadow-sm">
               <div className="p-6 md:p-8">
                 <p className="font-display text-sm font-bold uppercase tracking-wider text-foreground/50">Free</p>
                 <div className="mt-3 flex items-end gap-2">
@@ -165,7 +165,7 @@ function Pricing() {
             </div>
 
             {/* Pro card */}
-            <div className="flex flex-col overflow-hidden rounded-3xl bg-dark text-dark-foreground shadow-[0_30px_80px_-30px_oklch(0.18_0.005_50/0.35)]">
+            <div className="flex flex-col rounded-3xl bg-dark text-dark-foreground shadow-[0_30px_80px_-30px_oklch(0.18_0.005_50/0.35)]">
               <div className="p-6 md:p-8">
                 <div className="flex items-center justify-between">
                   <p className="font-display text-sm font-bold uppercase tracking-wider text-primary">Pro</p>
@@ -174,7 +174,7 @@ function Pricing() {
                   </span>
                 </div>
                 <div className="mt-3 flex items-end gap-2">
-                  <span className="font-display text-4xl font-extrabold tracking-tight">GHS 199</span>
+                  <span className="font-display text-4xl font-extrabold tracking-tight">GHS 299</span>
                   <span className="mb-1 text-sm text-white/50">/month</span>
                 </div>
                 <p className="mt-1 text-xs text-white/50">14-day free trial</p>
@@ -202,7 +202,7 @@ function Pricing() {
             </div>
 
             {/* Max card */}
-            <div className="flex flex-col overflow-hidden rounded-3xl border border-white/15 bg-dark text-dark-foreground sm:col-span-2 lg:col-span-1">
+            <div className="flex flex-col rounded-3xl border border-white/15 bg-dark text-dark-foreground sm:col-span-2 lg:col-span-1">
               <div className="p-6 md:p-8">
                 <div className="flex items-center justify-between">
                   <p className="font-display text-sm font-bold uppercase tracking-wider text-white/40">Max</p>
