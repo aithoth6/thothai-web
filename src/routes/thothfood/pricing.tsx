@@ -246,42 +246,79 @@ function Pricing() {
         <div className="container-page">
           <h2 className="font-display text-2xl font-extrabold tracking-tight md:text-3xl">Free vs Pro</h2>
           <div className="-mx-4 mt-8 overflow-x-auto px-4 sm:mx-0 sm:px-0">
-          <div className="overflow-hidden rounded-2xl border border-border">
-            <table className="w-full min-w-[520px] text-sm">
-              <thead>
-                <tr className="border-b border-border bg-secondary">
-                  <th className="px-6 py-4 text-left font-display font-bold">Feature</th>
-                  <th className="px-6 py-4 text-center font-display font-bold">Free</th>
-                  <th className="px-6 py-4 text-center font-display font-bold text-primary">Pro</th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.map((row, i) => (
-                  <tr key={row.feature} className={i % 2 === 0 ? "bg-background" : "bg-secondary/40"}>
-                    <td className="px-6 py-3.5 text-foreground/80">{row.feature}</td>
-                    <td className="px-6 py-3.5 text-center">
-                      {row.free ? (
-                        <span className="inline-grid h-5 w-5 place-items-center rounded-full bg-success text-success-foreground mx-auto">
-                          <Check className="h-3 w-3" strokeWidth={3} />
-                        </span>
-                      ) : (
-                        <Minus className="h-4 w-4 mx-auto text-foreground/25" />
-                      )}
-                    </td>
-                    <td className="px-6 py-3.5 text-center">
-                      {row.pro ? (
-                        <span className="inline-grid h-5 w-5 place-items-center rounded-full bg-success text-success-foreground mx-auto">
-                          <Check className="h-3 w-3" strokeWidth={3} />
-                        </span>
-                      ) : (
-                        <Minus className="h-4 w-4 mx-auto text-foreground/25" />
-                      )}
-                    </td>
+            {/* Desktop/tablet: horizontal scrollable table */}
+            <div className="hidden md:block rounded-2xl border border-border">
+              <table className="w-full min-w-[520px] text-sm">
+                <thead>
+                  <tr className="border-b border-border bg-secondary">
+                    <th className="px-6 py-4 text-left font-display font-bold">Feature</th>
+                    <th className="px-6 py-4 text-center font-display font-bold">Free</th>
+                    <th className="px-6 py-4 text-center font-display font-bold text-primary">Pro</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {comparisonRows.map((row, i) => (
+                    <tr key={row.feature} className={i % 2 === 0 ? "bg-background" : "bg-secondary/40"}>
+                      <td className="px-6 py-3.5 text-foreground/80">{row.feature}</td>
+                      <td className="px-6 py-3.5 text-center">
+                        {row.free ? (
+                          <span className="inline-grid h-5 w-5 place-items-center rounded-full bg-success text-success-foreground mx-auto">
+                            <Check className="h-3 w-3" strokeWidth={3} />
+                          </span>
+                        ) : (
+                          <Minus className="h-4 w-4 mx-auto text-foreground/25" />
+                        )}
+                      </td>
+                      <td className="px-6 py-3.5 text-center">
+                        {row.pro ? (
+                          <span className="inline-grid h-5 w-5 place-items-center rounded-full bg-success text-success-foreground mx-auto">
+                            <Check className="h-3 w-3" strokeWidth={3} />
+                          </span>
+                        ) : (
+                          <Minus className="h-4 w-4 mx-auto text-foreground/25" />
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile: stacked accordion-style list for readability */}
+            <div className="block md:hidden space-y-3">
+              {comparisonRows.map((row, i) => (
+                <div key={row.feature} className="rounded-2xl border border-border bg-background p-4">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <div className="text-sm font-medium text-foreground/80">{row.feature}</div>
+                      <div className="mt-2 text-xs text-foreground/60">Tap to compare</div>
+                    </div>
+                    <div className="flex flex-col items-end gap-2">
+                      <div className="flex items-center gap-2">
+                        {row.free ? (
+                          <span className="inline-grid h-5 w-5 place-items-center rounded-full bg-success text-success-foreground">
+                            <Check className="h-3 w-3" strokeWidth={3} />
+                          </span>
+                        ) : (
+                          <Minus className="h-4 w-4 text-foreground/25" />
+                        )}
+                        <span className="text-xs text-foreground/60">Free</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {row.pro ? (
+                          <span className="inline-grid h-5 w-5 place-items-center rounded-full bg-success text-success-foreground">
+                            <Check className="h-3 w-3" strokeWidth={3} />
+                          </span>
+                        ) : (
+                          <Minus className="h-4 w-4 text-foreground/25" />
+                        )}
+                        <span className="text-xs text-foreground/60">Pro</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
