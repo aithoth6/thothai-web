@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Instagram, Twitter, Facebook, Sparkles, Copy, Check } from "lucide-react";
-import { SIGNUP_URL, LOGIN_URL, CONTACT_EMAIL, SOCIAL_URLS } from "@/lib/site";
+import { Instagram, Facebook, Sparkles, Copy, Check } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
+import { SIGNUP_URL, LOGIN_URL, CONTACT_EMAIL, SOCIAL_URLS, WHATSAPP_BUSINESS_URL } from "@/lib/site";
 import { trackStartFree } from "@/lib/pixel";
 import { ThothAILogo } from "@/components/site/ThothAILogo";
 
@@ -32,12 +33,14 @@ export function Footer() {
                 <span className="font-semibold text-white">ThothShop</span> — WhatsApp commerce for every small business in Ghana. Clothing, electronics, beauty, crafts. If you sell it, you can sell it on WhatsApp.
               </p>
             </div>
-            <Link
-              to="/thothshop"
+            <a
+              href={`${WHATSAPP_BUSINESS_URL}?text=${encodeURIComponent("Hi Thoth team, I'd like early access to ThothShop.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-12 w-full items-center justify-center rounded-full bg-white/10 px-6 text-sm font-semibold text-white transition-colors hover:bg-white/15 md:w-auto"
             >
               Get early access
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -62,7 +65,7 @@ export function Footer() {
               <li><Link to="/thothfood/how-it-works" className="text-white/70 hover:text-primary">How it works</Link></li>
               <li><Link to="/thothfood/for-restaurants" className="text-white/70 hover:text-primary">For Restaurants</Link></li>
               <li><Link to="/thothfood/pricing" className="text-white/70 hover:text-primary">Pricing</Link></li>
-              <li><a href={SIGNUP_URL} onClick={trackStartFree} className="text-white/70 hover:text-primary">Start free</a></li>
+              <li><a href={`${SIGNUP_URL}?plan=FREE`} onClick={trackStartFree} className="text-white/70 hover:text-primary">Start free</a></li>
               <li><a href={LOGIN_URL} className="text-white/70 hover:text-primary">Restaurant Login</a></li>
               <li><Link to="/contact" search={{ role: undefined }} className="text-white/70 hover:text-primary">Contact</Link></li>
             </ul>
@@ -73,7 +76,7 @@ export function Footer() {
             <div className="mt-4 flex gap-3">
               {[
                 { Icon: Instagram, href: SOCIAL_URLS.instagram, label: "Instagram" },
-                { Icon: Twitter, href: SOCIAL_URLS.twitter, label: "Twitter" },
+                { Icon: SiTiktok, href: SOCIAL_URLS.twitter, label: "TikTok" },
                 { Icon: Facebook, href: SOCIAL_URLS.facebook, label: "Facebook" },
               ].map(({ Icon, href, label }) => (
                 <a

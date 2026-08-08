@@ -23,6 +23,6 @@ export const CONTACT_EMAIL = "aithoth6@gmail.com";
 
 export const SOCIAL_URLS = {
   instagram: "https://www.instagram.com/_.t.h.othai",
-  twitter: "#",
+  twitter: "https://www.tiktok.com/@order_on_whatsap",
   facebook: "https://www.facebook.com/thoth1234",
 };

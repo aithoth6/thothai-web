@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { MessageCircle, ShoppingBag, Wallet, MapPin, Sparkles, Shield, Bot, Smartphone, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
-import { WHATSAPP_ORDER_URL, SIGNUP_URL } from "@/lib/site";
+import { WHATSAPP_ORDER_URL, SIGNUP_URL, WHATSAPP_BUSINESS_URL } from "@/lib/site";
 import { trackStartFree } from "@/lib/pixel";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { featuredRestaurants } from "@/data/featured-restaurants";
@@ -297,12 +297,14 @@ function Home() {
                 <p className="mt-5 max-w-lg body-text text-white/65">
                   Meet <span className="font-semibold text-white">ThothShop</span> — WhatsApp commerce for every small business in Ghana. Clothing, electronics, beauty, crafts. One chat. Anything you sell.
                 </p>
-                <Link
-                  to="/thothshop"
+                <a
+                  href={`${WHATSAPP_BUSINESS_URL}?text=${encodeURIComponent("Hi Thoth team, I'm interested in ThothShop — please add me to the waitlist.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-dark hover:bg-primary hover:text-primary-foreground sm:w-auto"
                 >
                   Join the waitlist <ArrowRight className="h-4 w-4" />
-                </Link>
+                </a>
               </div>
               <div className="grid grid-cols-2 gap-3 text-center">
                 {["👗 Fashion", "💄 Beauty", "📱 Electronics", "🎨 Crafts"].map((t) => (
@@ -325,7 +327,7 @@ function Home() {
             </p>
             <div className="flex items-center gap-3">
               <a
-                href={SIGNUP_URL}
+                href={`${SIGNUP_URL}?plan=FREE`}
                 onClick={trackStartFree}
                 className="inline-flex h-10 items-center gap-2 rounded-full bg-primary px-5 text-sm font-semibold text-primary-foreground"
               >

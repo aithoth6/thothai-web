@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { motion } from "motion/react";
+import { WHATSAPP_BUSINESS_URL } from "@/lib/site";
 
 export const Route = createFileRoute("/thothshop")({
   head: () => ({
@@ -60,13 +61,14 @@ function ThothShop() {
             transition={{ delay: 0.17 }}
             className="mt-8 flex flex-col items-center gap-3"
           >
-            <Link
-              to="/contact"
-              search={{ role: undefined }}
+            <a
+              href={`${WHATSAPP_BUSINESS_URL}?text=${encodeURIComponent("Hi Thoth team, I'm interested in joining the ThothShop waitlist.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex h-14 items-center gap-2 rounded-full bg-primary px-8 text-base font-semibold text-primary-foreground shadow-[0_12px_40px_-12px_oklch(0.745_0.165_60/0.6)] transition-transform hover:-translate-y-0.5"
             >
               Join the waitlist <ArrowRight className="h-4 w-4" />
-            </Link>
+            </a>
             <p className="text-sm text-white/40">Drop us a message — we'll reach out before public launch.</p>
           </motion.div>
         </div>
@@ -138,13 +140,14 @@ function ThothShop() {
             Be first to know when ThothShop launches.
           </h2>
           <p className="mt-2 opacity-80">Leave your details — we'll reach out before public launch.</p>
-          <Link
-            to="/contact"
-            search={{ role: undefined }}
+          <a
+            href={`${WHATSAPP_BUSINESS_URL}?text=${encodeURIComponent("Hi Thoth team, I'd like early access to ThothShop.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-7 inline-flex h-14 items-center gap-2 rounded-full bg-dark px-8 font-semibold text-dark-foreground hover:bg-dark-card"
           >
             Get early access <ArrowRight className="h-4 w-4" />
-          </Link>
+          </a>
         </div>
       </section>
     </>

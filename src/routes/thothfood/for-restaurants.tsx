@@ -54,7 +54,7 @@ function ForRestaurants() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href={SIGNUP_URL}
+                href={`${SIGNUP_URL}?plan=FREE`}
                 className="inline-flex h-14 items-center gap-2 rounded-full bg-primary px-7 font-semibold text-primary-foreground shadow-[0_12px_40px_-12px_oklch(0.745_0.165_60/0.55)]"
                 onClick={trackStartFree}
               >
@@ -199,7 +199,7 @@ function ForRestaurants() {
           </div>
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href={SIGNUP_URL}
+              href={`${SIGNUP_URL}?plan=FREE`}
               className="inline-flex h-14 items-center gap-2 rounded-full bg-dark px-8 font-semibold text-dark-foreground hover:bg-dark-card"
             >
               Start free <ArrowRight className="h-4 w-4" />

@@ -323,7 +323,7 @@ function Pricing() {
             </p>
             <div className="mt-7 flex flex-wrap justify-center gap-3">
               <a
-                href={SIGNUP_URL}
+                href={`${SIGNUP_URL}?plan=FREE`}
                 className="inline-flex h-14 items-center gap-2 rounded-full bg-dark px-8 font-semibold text-dark-foreground hover:bg-dark-card"
                 onClick={trackStartFree}
               >
