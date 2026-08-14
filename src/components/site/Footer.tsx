@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Sparkles, Copy, Check } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
-import { SIGNUP_URL, LOGIN_URL, CONTACT_EMAIL, SOCIAL_URLS, WHATSAPP_BUSINESS_URL } from "@/lib/site";
+import { SIGNUP_URL, LOGIN_URL, RIDER_LOGIN_URL, CONTACT_EMAIL, SOCIAL_URLS, WHATSAPP_BUSINESS_URL } from "@/lib/site";
 import { trackStartFree } from "@/lib/pixel";
 import { ThothAILogo } from "@/components/site/ThothAILogo";
 
@@ -64,9 +64,11 @@ export function Footer() {
               <li><Link to="/thothshop" className="text-white/70 hover:text-primary">ThothShop</Link></li>
               <li><Link to="/thothfood/how-it-works" className="text-white/70 hover:text-primary">How it works</Link></li>
               <li><Link to="/thothfood/for-restaurants" className="text-white/70 hover:text-primary">For Restaurants</Link></li>
+              <li><Link to="/thothfood/for-riders" className="text-white/70 hover:text-primary">For Riders</Link></li>
               <li><Link to="/thothfood/pricing" className="text-white/70 hover:text-primary">Pricing</Link></li>
               <li><a href={`${SIGNUP_URL}?plan=FREE`} onClick={trackStartFree} className="text-white/70 hover:text-primary">Start free</a></li>
               <li><a href={LOGIN_URL} className="text-white/70 hover:text-primary">Restaurant Login</a></li>
+              <li><a href={RIDER_LOGIN_URL} className="text-white/70 hover:text-primary">Rider Login</a></li>
               <li><Link to="/contact" search={{ role: undefined }} className="text-white/70 hover:text-primary">Contact</Link></li>
             </ul>
           </div>

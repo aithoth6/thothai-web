@@ -10,6 +10,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 const thothFoodLinks = [
   { to: "/thothfood/how-it-works", label: "How it works" },
   { to: "/thothfood/for-restaurants", label: "For Restaurants" },
+  { to: "/thothfood/for-riders", label: "For Riders" },
   { to: "/thothfood/pricing", label: "Pricing" },
   { to: "/contact", label: "Contact" },
 ] as const;

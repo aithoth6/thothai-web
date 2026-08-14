@@ -13,6 +13,10 @@ export function trackStartFree() {
   if (typeof window !== "undefined") window.fbq?.("trackCustom", "start_free_click");
 }
 
+export function trackRiderSignup() {
+  if (typeof window !== "undefined") window.fbq?.("trackCustom", "rider_signup_click");
+}
+
 export function trackContactSubmit() {
   if (typeof window !== "undefined") window.fbq?.("trackCustom", "contact_submit");
 }
