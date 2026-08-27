@@ -4,8 +4,9 @@ const APP_URL = import.meta.env.VITE_APP_URL ?? "https://app.thothaigh.com";
 export const SIGNUP_URL = `${APP_URL}/onboarding`;
 export const LOGIN_URL = `${APP_URL}/login`;
 
-// Thoth-fleet rider signup — separate auth track from merchants, already built and live
-// in the app repo (/rider/signup, /rider/login, /rider/apply, /rider/portal).
+// Thoth-fleet rider portal — phone + password signup, separate from the restaurant
+// account above. Confirmed against the app repo's router (App.tsx): /rider/signup,
+// /rider/login.
 export const RIDER_SIGNUP_URL = `${APP_URL}/rider/signup`;
 export const RIDER_LOGIN_URL = `${APP_URL}/rider/login`;
 

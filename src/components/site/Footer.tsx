@@ -2,8 +2,15 @@ import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Instagram, Facebook, Sparkles, Copy, Check } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
-import { SIGNUP_URL, LOGIN_URL, RIDER_LOGIN_URL, CONTACT_EMAIL, SOCIAL_URLS, WHATSAPP_BUSINESS_URL } from "@/lib/site";
-import { trackStartFree } from "@/lib/pixel";
+import {
+  SIGNUP_URL,
+  LOGIN_URL,
+  RIDER_SIGNUP_URL,
+  CONTACT_EMAIL,
+  SOCIAL_URLS,
+  WHATSAPP_BUSINESS_URL,
+} from "@/lib/site";
+import { trackStartFree, trackRiderApply } from "@/lib/pixel";
 import { ThothAILogo } from "@/components/site/ThothAILogo";
 
 export function Footer() {
@@ -30,7 +37,9 @@ export function Footer() {
                 Food was just the beginning.
               </h3>
               <p className="mt-2 text-base text-white/65">
-                <span className="font-semibold text-white">ThothShop</span> — WhatsApp commerce for every small business in Ghana. Clothing, electronics, beauty, crafts. If you sell it, you can sell it on WhatsApp.
+                <span className="font-semibold text-white">ThothShop</span> — WhatsApp commerce for
+                every small business in Ghana. Clothing, electronics, beauty, crafts. If you sell
+                it, you can sell it on WhatsApp.
               </p>
             </div>
             <a
@@ -50,31 +59,86 @@ export function Footer() {
               <ThothAILogo size="md" />
             </Link>
             <p className="mt-4 max-w-sm text-sm text-white/55">
-              Building the commerce layer for Africa on WhatsApp. Food, fashion, everything — one chat away.
+              Building the commerce layer for Africa on WhatsApp. Food, fashion, everything — one
+              chat away.
             </p>
-            <p className="mt-6 text-xs text-white/40">
-              Accra, Ghana
-            </p>
+            <p className="mt-6 text-xs text-white/40">Accra, Ghana</p>
           </div>
 
           <div>
-            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white/50">Products</h4>
+            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white/50">
+              Products
+            </h4>
             <ul className="mt-4 space-y-3 text-sm">
-              <li><Link to="/thothfood" className="text-white/70 hover:text-primary">Thoth</Link></li>
-              <li><Link to="/thothshop" className="text-white/70 hover:text-primary">ThothShop</Link></li>
-              <li><Link to="/thothfood/how-it-works" className="text-white/70 hover:text-primary">How it works</Link></li>
-              <li><Link to="/thothfood/for-restaurants" className="text-white/70 hover:text-primary">For Restaurants</Link></li>
-              <li><Link to="/thothfood/for-riders" className="text-white/70 hover:text-primary">For Riders</Link></li>
-              <li><Link to="/thothfood/pricing" className="text-white/70 hover:text-primary">Pricing</Link></li>
-              <li><a href={`${SIGNUP_URL}?plan=FREE`} onClick={trackStartFree} className="text-white/70 hover:text-primary">Start free</a></li>
-              <li><a href={LOGIN_URL} className="text-white/70 hover:text-primary">Restaurant Login</a></li>
-              <li><a href={RIDER_LOGIN_URL} className="text-white/70 hover:text-primary">Rider Login</a></li>
-              <li><Link to="/contact" search={{ role: undefined }} className="text-white/70 hover:text-primary">Contact</Link></li>
+              <li>
+                <Link to="/thothfood" className="text-white/70 hover:text-primary">
+                  Thoth
+                </Link>
+              </li>
+              <li>
+                <Link to="/thothshop" className="text-white/70 hover:text-primary">
+                  ThothShop
+                </Link>
+              </li>
+              <li>
+                <Link to="/thothfood/how-it-works" className="text-white/70 hover:text-primary">
+                  How it works
+                </Link>
+              </li>
+              <li>
+                <Link to="/thothfood/for-restaurants" className="text-white/70 hover:text-primary">
+                  For Restaurants
+                </Link>
+              </li>
+              <li>
+                <Link to="/thothfood/for-riders" className="text-white/70 hover:text-primary">
+                  For Riders
+                </Link>
+              </li>
+              <li>
+                <Link to="/thothfood/pricing" className="text-white/70 hover:text-primary">
+                  Pricing
+                </Link>
+              </li>
+              <li>
+                <a
+                  href={`${SIGNUP_URL}?plan=FREE`}
+                  onClick={trackStartFree}
+                  className="text-white/70 hover:text-primary"
+                >
+                  Start free
+                </a>
+              </li>
+              <li>
+                <a href={LOGIN_URL} className="text-white/70 hover:text-primary">
+                  Restaurant Login
+                </a>
+              </li>
+              <li>
+                <a
+                  href={RIDER_SIGNUP_URL}
+                  onClick={trackRiderApply}
+                  className="text-white/70 hover:text-primary"
+                >
+                  Apply to ride
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  search={{ role: undefined }}
+                  className="text-white/70 hover:text-primary"
+                >
+                  Contact
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white/50">Follow</h4>
+            <h4 className="font-display text-sm font-bold uppercase tracking-wider text-white/50">
+              Follow
+            </h4>
             <div className="mt-4 flex gap-3">
               {[
                 { Icon: Instagram, href: SOCIAL_URLS.instagram, label: "Instagram" },
@@ -105,8 +169,12 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row md:items-center">
           <p>© {new Date().getFullYear()} Thoth Technologies. All rights reserved.</p>
           <div className="flex flex-wrap gap-4">
-            <Link to="/terms" className="hover:text-white/70">Terms</Link>
-            <Link to="/privacy" className="hover:text-white/70">Privacy</Link>
+            <Link to="/terms" className="hover:text-white/70">
+              Terms
+            </Link>
+            <Link to="/privacy" className="hover:text-white/70">
+              Privacy
+            </Link>
             <p>Made with ❤️ in Accra</p>
           </div>
         </div>

@@ -5,7 +5,12 @@ import { LOGIN_URL } from "@/lib/site";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { ThothAILogo } from "@/components/site/ThothAILogo";
 import { ThothFoodLogo } from "@/components/site/ThothFoodLogo";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const thothFoodLinks = [
   { to: "/thothfood/how-it-works", label: "How it works" },
@@ -31,10 +36,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="container-page flex h-16 items-center justify-between">
-
         {isThothFood ? (
           <div className="flex flex-col justify-center">
-            <Link to="/" className="text-[10px] font-semibold leading-none text-foreground/40 transition-colors hover:text-foreground/70">
+            <Link
+              to="/"
+              className="text-[10px] font-semibold leading-none text-foreground/40 transition-colors hover:text-foreground/70"
+            >
               Thoth Technologies ↗
             </Link>
             <Link to="/thothfood" className="mt-0.5">
@@ -55,27 +62,46 @@ export function Header() {
                   <Link
                     to="/products"
                     className="relative text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-                    activeProps={{ className: "text-foreground after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary" }}
+                    activeProps={{
+                      className:
+                        "text-foreground after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary",
+                    }}
                   >
                     Our Products
                   </Link>
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
-                      <button className="ml-0.5 text-foreground/50 transition-colors hover:text-foreground" aria-label="Products menu">
+                      <button
+                        className="ml-0.5 text-foreground/50 transition-colors hover:text-foreground"
+                        aria-label="Products menu"
+                      >
                         <ChevronDown className="h-3.5 w-3.5" />
                       </button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent className="w-56 rounded-2xl border border-border bg-card p-2" align="start">
+                    <DropdownMenuContent
+                      className="w-56 rounded-2xl border border-border bg-card p-2"
+                      align="start"
+                    >
                       <DropdownMenuItem asChild>
-                        <Link to="/thothfood" className="flex cursor-pointer flex-col gap-0.5 rounded-xl px-3 py-2.5">
+                        <Link
+                          to="/thothfood"
+                          className="flex cursor-pointer flex-col gap-0.5 rounded-xl px-3 py-2.5"
+                        >
                           <span className="text-sm font-semibold">Thoth</span>
-                          <span className="text-xs text-muted-foreground">Order food on WhatsApp</span>
+                          <span className="text-xs text-muted-foreground">
+                            Order food on WhatsApp
+                          </span>
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild>
-                        <Link to="/thothshop" className="flex cursor-pointer flex-col gap-0.5 rounded-xl px-3 py-2.5">
+                        <Link
+                          to="/thothshop"
+                          className="flex cursor-pointer flex-col gap-0.5 rounded-xl px-3 py-2.5"
+                        >
                           <span className="text-sm font-semibold">ThothShop</span>
-                          <span className="text-xs text-muted-foreground">Sell anything on WhatsApp</span>
+                          <span className="text-xs text-muted-foreground">
+                            Sell anything on WhatsApp
+                          </span>
                         </Link>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
@@ -88,7 +114,10 @@ export function Header() {
                 key={l.to}
                 to={l.to}
                 className="relative text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-                activeProps={{ className: "text-foreground after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary" }}
+                activeProps={{
+                  className:
+                    "text-foreground after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-primary",
+                }}
               >
                 {l.label}
               </Link>
@@ -148,14 +177,20 @@ export function Header() {
                       onClick={() => setOpen(false)}
                       className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/70 hover:bg-muted"
                     >
-                      Thoth <span className="ml-1 text-xs text-muted-foreground">Order food on WhatsApp</span>
+                      Thoth{" "}
+                      <span className="ml-1 text-xs text-muted-foreground">
+                        Order food on WhatsApp
+                      </span>
                     </Link>
                     <Link
                       to="/thothshop"
                       onClick={() => setOpen(false)}
                       className="block rounded-md px-3 py-2.5 text-sm font-medium text-foreground/70 hover:bg-muted"
                     >
-                      ThothShop <span className="ml-1 text-xs text-muted-foreground">Sell anything on WhatsApp</span>
+                      ThothShop{" "}
+                      <span className="ml-1 text-xs text-muted-foreground">
+                        Sell anything on WhatsApp
+                      </span>
                     </Link>
                   </div>
                 </div>
@@ -168,7 +203,7 @@ export function Header() {
                 >
                   {l.label}
                 </Link>
-              )
+              ),
             )}
             <div className="mt-2 flex flex-col gap-2">
               {isThothFood ? (
@@ -180,7 +215,10 @@ export function Header() {
                   >
                     Restaurant Login
                   </a>
-                  <WhatsAppLink onClick={() => setOpen(false)} className="inline-flex h-12 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground">
+                  <WhatsAppLink
+                    onClick={() => setOpen(false)}
+                    className="inline-flex h-12 items-center justify-center rounded-full bg-primary font-semibold text-primary-foreground"
+                  >
                     Order Now
                   </WhatsAppLink>
                 </>
