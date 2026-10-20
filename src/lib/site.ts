@@ -1,8 +1,18 @@
 const APP_URL = import.meta.env.VITE_APP_URL ?? "https://app.thothaigh.com";
 
-// TODO: verify the exact signup/onboarding entry route in the app repo
-export const SIGNUP_URL = `${APP_URL}/onboarding`;
+// Confirmed against the app repo's router (App.tsx): /signup creates the account (and
+// accepts ?plan=), /onboarding is the wizard that runs after — it requires a session and
+// redirects an unauthenticated visitor to plain /signup, dropping any query string. Pointing
+// this at /onboarding silently lost the ?plan= param on every marketing-site signup link,
+// which is why Discovery (?plan=MARKETPLACE) landed everyone on FREE instead.
+export const SIGNUP_URL = `${APP_URL}/signup`;
 export const LOGIN_URL = `${APP_URL}/login`;
+
+// Thoth-fleet rider portal — phone + password signup, separate from the restaurant
+// account above. Confirmed against the app repo's router (App.tsx): /rider/signup,
+// /rider/login.
+export const RIDER_SIGNUP_URL = `${APP_URL}/rider/signup`;
+export const RIDER_LOGIN_URL = `${APP_URL}/rider/login`;
 
 // Base URL of the marketing site — used in sitemap and structured data
 export const SITE_URL = import.meta.env.VITE_SITE_URL ?? "https://thothfood.com";

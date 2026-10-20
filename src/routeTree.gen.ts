@@ -21,6 +21,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ThothfoodIndexRouteImport } from './routes/thothfood/index'
 import { Route as ThothfoodPricingRouteImport } from './routes/thothfood/pricing'
 import { Route as ThothfoodHowItWorksRouteImport } from './routes/thothfood/how-it-works'
+import { Route as ThothfoodForRidersRouteImport } from './routes/thothfood/for-riders'
 import { Route as ThothfoodForRestaurantsRouteImport } from './routes/thothfood/for-restaurants'
 
 const ThothshopRoute = ThothshopRouteImport.update({
@@ -83,6 +84,11 @@ const ThothfoodHowItWorksRoute = ThothfoodHowItWorksRouteImport.update({
   path: '/thothfood/how-it-works',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThothfoodForRidersRoute = ThothfoodForRidersRouteImport.update({
+  id: '/thothfood/for-riders',
+  path: '/thothfood/for-riders',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ThothfoodForRestaurantsRoute = ThothfoodForRestaurantsRouteImport.update({
   id: '/thothfood/for-restaurants',
   path: '/thothfood/for-restaurants',
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/terms': typeof TermsRoute
   '/thothshop': typeof ThothshopRoute
   '/thothfood/for-restaurants': typeof ThothfoodForRestaurantsRoute
+  '/thothfood/for-riders': typeof ThothfoodForRidersRoute
   '/thothfood/how-it-works': typeof ThothfoodHowItWorksRoute
   '/thothfood/pricing': typeof ThothfoodPricingRoute
   '/thothfood/': typeof ThothfoodIndexRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/terms': typeof TermsRoute
   '/thothshop': typeof ThothshopRoute
   '/thothfood/for-restaurants': typeof ThothfoodForRestaurantsRoute
+  '/thothfood/for-riders': typeof ThothfoodForRidersRoute
   '/thothfood/how-it-works': typeof ThothfoodHowItWorksRoute
   '/thothfood/pricing': typeof ThothfoodPricingRoute
   '/thothfood': typeof ThothfoodIndexRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   '/terms': typeof TermsRoute
   '/thothshop': typeof ThothshopRoute
   '/thothfood/for-restaurants': typeof ThothfoodForRestaurantsRoute
+  '/thothfood/for-riders': typeof ThothfoodForRidersRoute
   '/thothfood/how-it-works': typeof ThothfoodHowItWorksRoute
   '/thothfood/pricing': typeof ThothfoodPricingRoute
   '/thothfood/': typeof ThothfoodIndexRoute
@@ -148,6 +157,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thothshop'
     | '/thothfood/for-restaurants'
+    | '/thothfood/for-riders'
     | '/thothfood/how-it-works'
     | '/thothfood/pricing'
     | '/thothfood/'
@@ -163,6 +173,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thothshop'
     | '/thothfood/for-restaurants'
+    | '/thothfood/for-riders'
     | '/thothfood/how-it-works'
     | '/thothfood/pricing'
     | '/thothfood'
@@ -178,6 +189,7 @@ export interface FileRouteTypes {
     | '/terms'
     | '/thothshop'
     | '/thothfood/for-restaurants'
+    | '/thothfood/for-riders'
     | '/thothfood/how-it-works'
     | '/thothfood/pricing'
     | '/thothfood/'
@@ -194,6 +206,7 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   ThothshopRoute: typeof ThothshopRoute
   ThothfoodForRestaurantsRoute: typeof ThothfoodForRestaurantsRoute
+  ThothfoodForRidersRoute: typeof ThothfoodForRidersRoute
   ThothfoodHowItWorksRoute: typeof ThothfoodHowItWorksRoute
   ThothfoodPricingRoute: typeof ThothfoodPricingRoute
   ThothfoodIndexRoute: typeof ThothfoodIndexRoute
@@ -285,6 +298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThothfoodHowItWorksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/thothfood/for-riders': {
+      id: '/thothfood/for-riders'
+      path: '/thothfood/for-riders'
+      fullPath: '/thothfood/for-riders'
+      preLoaderRoute: typeof ThothfoodForRidersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/thothfood/for-restaurants': {
       id: '/thothfood/for-restaurants'
       path: '/thothfood/for-restaurants'
@@ -306,6 +326,7 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   ThothshopRoute: ThothshopRoute,
   ThothfoodForRestaurantsRoute: ThothfoodForRestaurantsRoute,
+  ThothfoodForRidersRoute: ThothfoodForRidersRoute,
   ThothfoodHowItWorksRoute: ThothfoodHowItWorksRoute,
   ThothfoodPricingRoute: ThothfoodPricingRoute,
   ThothfoodIndexRoute: ThothfoodIndexRoute,
