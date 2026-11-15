@@ -9,54 +9,25 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ThothshopRouteImport } from './routes/thothshop'
-import { Route as TermsRouteImport } from './routes/terms'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as RestaurantsRouteImport } from './routes/restaurants'
-import { Route as ProductsRouteImport } from './routes/products'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as RestaurantsRouteImport } from './routes/restaurants'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as ThothshopRouteImport } from './routes/thothshop'
 import { Route as ThothfoodIndexRouteImport } from './routes/thothfood/index'
-import { Route as ThothfoodPricingRouteImport } from './routes/thothfood/pricing'
-import { Route as ThothfoodHowItWorksRouteImport } from './routes/thothfood/how-it-works'
-import { Route as ThothfoodForRidersRouteImport } from './routes/thothfood/for-riders'
 import { Route as ThothfoodForRestaurantsRouteImport } from './routes/thothfood/for-restaurants'
+import { Route as ThothfoodForRidersRouteImport } from './routes/thothfood/for-riders'
+import { Route as ThothfoodHowItWorksRouteImport } from './routes/thothfood/how-it-works'
+import { Route as ThothfoodLaunchRouteImport } from './routes/thothfood/launch'
+import { Route as ThothfoodPricingRouteImport } from './routes/thothfood/pricing'
 
-const ThothshopRoute = ThothshopRouteImport.update({
-  id: '/thothshop',
-  path: '/thothshop',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const TermsRoute = TermsRouteImport.update({
-  id: '/terms',
-  path: '/terms',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RestaurantsRoute = RestaurantsRouteImport.update({
-  id: '/restaurants',
-  path: '/restaurants',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProductsRoute = ProductsRouteImport.update({
-  id: '/products',
-  path: '/products',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -64,9 +35,39 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RestaurantsRoute = RestaurantsRouteImport.update({
+  id: '/restaurants',
+  path: '/restaurants',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThothshopRoute = ThothshopRouteImport.update({
+  id: '/thothshop',
+  path: '/thothshop',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThothfoodIndexRoute = ThothfoodIndexRouteImport.update({
@@ -74,14 +75,9 @@ const ThothfoodIndexRoute = ThothfoodIndexRouteImport.update({
   path: '/thothfood/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ThothfoodPricingRoute = ThothfoodPricingRouteImport.update({
-  id: '/thothfood/pricing',
-  path: '/thothfood/pricing',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ThothfoodHowItWorksRoute = ThothfoodHowItWorksRouteImport.update({
-  id: '/thothfood/how-it-works',
-  path: '/thothfood/how-it-works',
+const ThothfoodForRestaurantsRoute = ThothfoodForRestaurantsRouteImport.update({
+  id: '/thothfood/for-restaurants',
+  path: '/thothfood/for-restaurants',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ThothfoodForRidersRoute = ThothfoodForRidersRouteImport.update({
@@ -89,9 +85,19 @@ const ThothfoodForRidersRoute = ThothfoodForRidersRouteImport.update({
   path: '/thothfood/for-riders',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ThothfoodForRestaurantsRoute = ThothfoodForRestaurantsRouteImport.update({
-  id: '/thothfood/for-restaurants',
-  path: '/thothfood/for-restaurants',
+const ThothfoodHowItWorksRoute = ThothfoodHowItWorksRouteImport.update({
+  id: '/thothfood/how-it-works',
+  path: '/thothfood/how-it-works',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThothfoodLaunchRoute = ThothfoodLaunchRouteImport.update({
+  id: '/thothfood/launch',
+  path: '/thothfood/launch',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ThothfoodPricingRoute = ThothfoodPricingRouteImport.update({
+  id: '/thothfood/pricing',
+  path: '/thothfood/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -108,6 +114,7 @@ export interface FileRoutesByFullPath {
   '/thothfood/for-restaurants': typeof ThothfoodForRestaurantsRoute
   '/thothfood/for-riders': typeof ThothfoodForRidersRoute
   '/thothfood/how-it-works': typeof ThothfoodHowItWorksRoute
+  '/thothfood/launch': typeof ThothfoodLaunchRoute
   '/thothfood/pricing': typeof ThothfoodPricingRoute
   '/thothfood/': typeof ThothfoodIndexRoute
 }
@@ -124,6 +131,7 @@ export interface FileRoutesByTo {
   '/thothfood/for-restaurants': typeof ThothfoodForRestaurantsRoute
   '/thothfood/for-riders': typeof ThothfoodForRidersRoute
   '/thothfood/how-it-works': typeof ThothfoodHowItWorksRoute
+  '/thothfood/launch': typeof ThothfoodLaunchRoute
   '/thothfood/pricing': typeof ThothfoodPricingRoute
   '/thothfood': typeof ThothfoodIndexRoute
 }
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/thothfood/for-restaurants': typeof ThothfoodForRestaurantsRoute
   '/thothfood/for-riders': typeof ThothfoodForRidersRoute
   '/thothfood/how-it-works': typeof ThothfoodHowItWorksRoute
+  '/thothfood/launch': typeof ThothfoodLaunchRoute
   '/thothfood/pricing': typeof ThothfoodPricingRoute
   '/thothfood/': typeof ThothfoodIndexRoute
 }
@@ -159,6 +168,7 @@ export interface FileRouteTypes {
     | '/thothfood/for-restaurants'
     | '/thothfood/for-riders'
     | '/thothfood/how-it-works'
+    | '/thothfood/launch'
     | '/thothfood/pricing'
     | '/thothfood/'
   fileRoutesByTo: FileRoutesByTo
@@ -175,6 +185,7 @@ export interface FileRouteTypes {
     | '/thothfood/for-restaurants'
     | '/thothfood/for-riders'
     | '/thothfood/how-it-works'
+    | '/thothfood/launch'
     | '/thothfood/pricing'
     | '/thothfood'
   id:
@@ -191,6 +202,7 @@ export interface FileRouteTypes {
     | '/thothfood/for-restaurants'
     | '/thothfood/for-riders'
     | '/thothfood/how-it-works'
+    | '/thothfood/launch'
     | '/thothfood/pricing'
     | '/thothfood/'
   fileRoutesById: FileRoutesById
@@ -208,59 +220,18 @@ export interface RootRouteChildren {
   ThothfoodForRestaurantsRoute: typeof ThothfoodForRestaurantsRoute
   ThothfoodForRidersRoute: typeof ThothfoodForRidersRoute
   ThothfoodHowItWorksRoute: typeof ThothfoodHowItWorksRoute
+  ThothfoodLaunchRoute: typeof ThothfoodLaunchRoute
   ThothfoodPricingRoute: typeof ThothfoodPricingRoute
   ThothfoodIndexRoute: typeof ThothfoodIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/thothshop': {
-      id: '/thothshop'
-      path: '/thothshop'
-      fullPath: '/thothshop'
-      preLoaderRoute: typeof ThothshopRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/terms': {
-      id: '/terms'
-      path: '/terms'
-      fullPath: '/terms'
-      preLoaderRoute: typeof TermsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/restaurants': {
-      id: '/restaurants'
-      path: '/restaurants'
-      fullPath: '/restaurants'
-      preLoaderRoute: typeof RestaurantsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/products': {
-      id: '/products'
-      path: '/products'
-      fullPath: '/products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -270,11 +241,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/restaurants': {
+      id: '/restaurants'
+      path: '/restaurants'
+      fullPath: '/restaurants'
+      preLoaderRoute: typeof RestaurantsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thothshop': {
+      id: '/thothshop'
+      path: '/thothshop'
+      fullPath: '/thothshop'
+      preLoaderRoute: typeof ThothshopRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thothfood/': {
@@ -284,18 +297,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThothfoodIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/thothfood/pricing': {
-      id: '/thothfood/pricing'
-      path: '/thothfood/pricing'
-      fullPath: '/thothfood/pricing'
-      preLoaderRoute: typeof ThothfoodPricingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/thothfood/how-it-works': {
-      id: '/thothfood/how-it-works'
-      path: '/thothfood/how-it-works'
-      fullPath: '/thothfood/how-it-works'
-      preLoaderRoute: typeof ThothfoodHowItWorksRouteImport
+    '/thothfood/for-restaurants': {
+      id: '/thothfood/for-restaurants'
+      path: '/thothfood/for-restaurants'
+      fullPath: '/thothfood/for-restaurants'
+      preLoaderRoute: typeof ThothfoodForRestaurantsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/thothfood/for-riders': {
@@ -305,11 +311,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ThothfoodForRidersRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/thothfood/for-restaurants': {
-      id: '/thothfood/for-restaurants'
-      path: '/thothfood/for-restaurants'
-      fullPath: '/thothfood/for-restaurants'
-      preLoaderRoute: typeof ThothfoodForRestaurantsRouteImport
+    '/thothfood/how-it-works': {
+      id: '/thothfood/how-it-works'
+      path: '/thothfood/how-it-works'
+      fullPath: '/thothfood/how-it-works'
+      preLoaderRoute: typeof ThothfoodHowItWorksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thothfood/launch': {
+      id: '/thothfood/launch'
+      path: '/thothfood/launch'
+      fullPath: '/thothfood/launch'
+      preLoaderRoute: typeof ThothfoodLaunchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/thothfood/pricing': {
+      id: '/thothfood/pricing'
+      path: '/thothfood/pricing'
+      fullPath: '/thothfood/pricing'
+      preLoaderRoute: typeof ThothfoodPricingRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -328,6 +348,7 @@ const rootRouteChildren: RootRouteChildren = {
   ThothfoodForRestaurantsRoute: ThothfoodForRestaurantsRoute,
   ThothfoodForRidersRoute: ThothfoodForRidersRoute,
   ThothfoodHowItWorksRoute: ThothfoodHowItWorksRoute,
+  ThothfoodLaunchRoute: ThothfoodLaunchRoute,
   ThothfoodPricingRoute: ThothfoodPricingRoute,
   ThothfoodIndexRoute: ThothfoodIndexRoute,
 }

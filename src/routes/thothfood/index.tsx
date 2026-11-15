@@ -6,6 +6,7 @@ import { WHATSAPP_ORDER_URL, SIGNUP_URL, WHATSAPP_BUSINESS_URL } from "@/lib/sit
 import { trackStartFree } from "@/lib/pixel";
 import { WhatsAppLink } from "@/components/site/WhatsAppLink";
 import { featuredRestaurants } from "@/data/featured-restaurants";
+import { LAUNCH } from "@/data/launch";
 
 export const Route = createFileRoute("/thothfood/")({
   head: () => ({
@@ -66,6 +67,14 @@ function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-success" />
               Live in Accra
             </motion.span>
+            {LAUNCH.announce && (
+              <Link
+                to="/thothfood/launch"
+                className="mt-3 flex w-fit items-center gap-2 rounded-full bg-primary/15 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/25"
+              >
+                🍽️ {LAUNCH.phase === "live" ? `Now open at ${LAUNCH.place}` : `New: Thoth Chop at ${LAUNCH.place}`} · Learn more →
+              </Link>
+            )}
             <motion.h1
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}

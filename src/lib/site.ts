@@ -20,10 +20,13 @@ export const SITE_URL = import.meta.env.VITE_SITE_URL ?? "https://thothfood.com"
 // Base URL of the Railway API backend — used for contact form POST
 export const API_URL = import.meta.env.VITE_API_URL ?? APP_URL;
 
-// Central Thoth ordering number — customers use this to browse menus and
-// place orders from Free-tier restaurants. Infrastructure coming soon.
-// TODO: replace placeholder with real central number when available.
-export const WHATSAPP_ORDER_URL = "https://wa.me/233XXXXXXXXXX";
+// Central Thoth ordering number (+233 55 944 8358): customers use it to browse menus and
+// place orders. Live. The prefilled "Hi" opens the welcome.
+export const WHATSAPP_ORDER_URL = "https://wa.me/233559448358?text=Hi";
+
+// The TEST version of the same chat (staging: Paystack test mode, no real money, no food sent).
+// Linked only from the launch page and clearly labelled there. +233 50 295 9481.
+export const WHATSAPP_TEST_URL = "https://wa.me/233502959481?text=Hi%2C%20I%27m%20testing";
 
 // Thoth Technologies direct business number — for inquiries, partnerships,
 // restaurant onboarding questions, and support.
