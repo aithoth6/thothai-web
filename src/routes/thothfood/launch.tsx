@@ -11,7 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const TITLE = `Thoth Chop is coming to ${LAUNCH.place}`;
+const TITLE = `Thoth Chop is coming to ${LAUNCH.place}${LAUNCH.when ? ` ${LAUNCH.when}` : ""}`;
 const DESCRIPTION = `Order food from ${LAUNCH.place} on WhatsApp: no app, no account. Try the test version now, with no money taken and no food sent.`;
 
 export const Route = createFileRoute("/thothfood/launch")({
@@ -105,7 +105,7 @@ function Launch() {
             {live ? (
               <>Thoth Chop is open at <span className="text-primary">{LAUNCH.place}.</span></>
             ) : (
-              <>Thoth Chop is coming to <span className="text-primary">{LAUNCH.place}.</span></>
+              <>Thoth Chop is coming to <span className="text-primary">{LAUNCH.place}{LAUNCH.when ? ` ${LAUNCH.when}` : ""}.</span></>
             )}
           </motion.h1>
           <motion.p
@@ -145,7 +145,7 @@ function Launch() {
           </motion.div>
           {!live && (
             <p className="mt-4 text-sm text-white/50">
-              Test version: no money taken, no food sent.{LAUNCH.testUntilLabel ? ` Open until ${LAUNCH.testUntilLabel}.` : ""}
+              Test version: no money taken, no food sent.{LAUNCH.testUntilLabel ? ` Open today until ${LAUNCH.testUntilLabel}.` : ""}
             </p>
           )}
         </div>

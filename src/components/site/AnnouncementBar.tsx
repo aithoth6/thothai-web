@@ -22,7 +22,7 @@ export function AnnouncementBar() {
     <div className="bg-primary text-primary-foreground">
       <div className="container-page flex items-center justify-center gap-3 py-2 text-center text-sm font-semibold">
         <span>
-          {live ? `🍽️ Thoth Chop is now open at ${LAUNCH.place}.` : `🍽️ Thoth Chop is coming to ${LAUNCH.place}.`}
+          {live ? `🍽️ Thoth Chop is now open at ${LAUNCH.place}.` : `🍽️ Thoth Chop is coming to ${LAUNCH.place}${LAUNCH.when ? ` ${LAUNCH.when}` : ""}.`}
         </span>
         <Link to="/thothfood/launch" className="inline-flex items-center gap-1 underline underline-offset-4 hover:opacity-80">
           {live ? "Order now" : "Learn more"} <ArrowRight className="h-3.5 w-3.5" />

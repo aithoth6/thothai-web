@@ -72,7 +72,7 @@ function Home() {
                 to="/thothfood/launch"
                 className="mt-3 flex w-fit items-center gap-2 rounded-full bg-primary/15 px-3 py-1.5 text-xs font-semibold text-primary hover:bg-primary/25"
               >
-                🍽️ {LAUNCH.phase === "live" ? `Now open at ${LAUNCH.place}` : `New: Thoth Chop at ${LAUNCH.place}`} · Learn more →
+                🍽️ {LAUNCH.phase === "live" ? `Now open at ${LAUNCH.place}` : `New: Thoth Chop at ${LAUNCH.place}${LAUNCH.when ? ` ${LAUNCH.when}` : ""}`} · Learn more →
               </Link>
             )}
             <motion.h1

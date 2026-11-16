@@ -12,10 +12,12 @@ export const LAUNCH = {
   phase: "prelaunch" as LaunchPhase,
   announce: true,
   place: "TF Hostel",
+  /** The short way the banner and the hero link say when ("coming to TF Hostel this Friday"). Empty = no date said. */
+  when: "this Friday",
   /** Said where the page says when ordering for real opens, e.g. "Monday 17 November". Keep it vague until the date is certain. */
-  liveLabel: "very soon",
+  liveLabel: "Friday 20 November",
   /** The last day of the test week, when there is one (shown as "Test version open until ..."). Leave empty for none. */
-  testUntilLabel: "",
+  testUntilLabel: "Friday 20 November",
 };
 
 /** The vendors on first, by name as customers see them. Only vendors that have agreed to be named belong here. */
