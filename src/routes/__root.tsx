@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { Header } from "@/components/site/Header";
+import { AnnouncementBar } from "@/components/site/AnnouncementBar";
 import { Footer } from "@/components/site/Footer";
 import { SITE_URL, CONTACT_EMAIL } from "@/lib/site";
 
@@ -169,6 +170,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex min-h-screen flex-col">
+        <AnnouncementBar />
         <Header />
         <main className="flex-1">
           <Outlet />
