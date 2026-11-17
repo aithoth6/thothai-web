@@ -26,6 +26,7 @@ export const LAUNCH_VENDORS = [
   { name: "Mash Allah Koko", what: "Koko", emoji: "🥣" },
   { name: "Severin Plus", what: "Local Ghanaian", emoji: "🍲" },
   { name: "Simply Mahkies", what: "Groceries", emoji: "🛒" },
+  { name: "Suncity Food Court", what: "Food court", emoji: "🍽️" },
 ] as const;
 
 /** Where the rest are coming. */
